@@ -29,7 +29,9 @@ export default defineConfig({
         {
           text: 'Business',
           items: [
-            { text: 'test', link: '/business/test' }
+            { text: 'test', link: '/business/test' },
+            { text: 'h5', link: '/business/h5' },
+            { text: 'erp', link: '/business/erp' }
           ]
         }
       ]
