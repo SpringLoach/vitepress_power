@@ -8,8 +8,8 @@
 
 2.配置[markdown](https://vitepress.dev/zh/reference/site-config#markdown)中的[选项](https://github.com/vuejs/vitepress/blob/main/src/node/markdown/markdown.ts)theme，可以配置通用，或是光/暗两种主题：
 
-```
-config.mts
+```javascript
+// config.mts
 export default defineConfig({
   ...
   markdown: {

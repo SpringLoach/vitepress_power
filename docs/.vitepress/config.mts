@@ -9,7 +9,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/guide/markdown-examples' },
+      { text: 'Guide', link: '/guide/待整理' },
       { text: 'Business', link: '/business/test' },
     ],
 
@@ -19,9 +19,15 @@ export default defineConfig({
           text: 'Guide',
           items: [
             { text: 'Markdown Examples', link: '/guide/markdown-examples' },
-            { text: 'Runtime API Examples', link: '/guide/api-examples' },
             { text: 'vitepress', link: '/guide/vitepress' },
             { text: 'ES Next', link: '/guide/ES Next' },
+            { text: 'nvm', link: '/guide/nvm' },
+            { text: 'elementUI', link: '/guide/elementUI' },
+            { text: 'viewer.js', link: '/guide/viewer.js' },
+            { text: '样式', link: '/guide/样式' },
+            { text: 'vant', link: '/guide/vant' },
+            { text: '微信小程序', link: '/guide/微信小程序' },
+            { text: '待整理', link: '/guide/待整理' },
           ]
         }
       ],
@@ -57,6 +63,6 @@ export default defineConfig({
   },
 
   markdown: {
-    theme: 'github-dark'
+    // theme: 'github-dark'
   }
 })
