@@ -1,3 +1,28 @@
+#### 表格-渲染组件就触发校验
+
+一般多选下拉框会遇到类似问题， 对它的初始值赋值为 ` []` 即可
+
+
+
+#### 表格-首行统计
+
+在列表数据 unshift 一个数据项，然后有特殊标记（布尔值最好）即可
+
+
+
+#### 下拉框多标签换行问题
+
+多标签超长时，+1标签换行问题（给需要改样式的lb-select加类名lb-select-wrap）
+
+```less
+// select-tag长度限制
+.lb-select-wrap ::v-deep .el-tag {
+    max-width: 90px !important;
+}
+```
+
+
+
 #### 日期时间选择器-可选择时间不能早于当前时间
 
 ```html
@@ -54,6 +79,10 @@ export default {
 
 
 
+#### 级联选择器多次点击导致页面奔溃问题
+
+https://mybj123.com/18067.html
+
 
 
 #### 自定义el-progress(vue3)
@@ -84,6 +113,20 @@ function customColorMethod(percentage: number) {
     }
 }
 </style>
+```
+
+
+
+#### 表格-show-overflow-tooltip失效
+
+如果表格内容使用了插槽方式，就可能导致省略号不显示
+
+```html
+<el-table-column label="示例" prop="demo" show-overflow-tooltip>
+    <template slot-scope="scope">
+  	    123
+    </template>
+</el-table-column>
 ```
 
 
@@ -197,6 +240,85 @@ export default {
 【父子组件交互】
 改变列表时，[当前选中数据列表]赋值为空，请求新的列表数据时其实已经自动做了
 父组件点击【批量审核好评】时，要获取到[当前选中数据列表]
+```
+
+
+
+
+
+#### 表格-自适应最大高度
+
+```html
+<el-table class="config-table" />
+
+<style lang="less" scoped>
+.config-table {
+    height: auto !important;
+
+    // el-table自带的最大高度是个固定高度，内容少时也会撑开
+    ::v-deep .el-table__body-wrapper {
+        overflow-y: auto;
+        height: auto !important;
+        max-height: 330px;
+    }
+}
+</style>
+```
+
+
+
+#### 表格-内容格式化
+
+```html
+<el-table-column align="center" prop="config" label="设置" :formatter="formatRow" />
+<el-table-column align="center" prop="state" label="状态" :formatter="formatRow" />
+
+<script>
+export default {
+    methods: {
+        formatRow(row, column, cellValue) {
+            return cellValue || '-'
+        }
+    }
+}
+</script>
+```
+
+
+
+#### 嵌套对象数据的表单校验
+
+`demo`
+
+```html
+<el-form ref="formRef" class="config-list" :model="form" :inline="true">
+  <div v-for="(item, index) in form.hh" :key="index" class="config-item">
+    <el-form-item
+      :prop="'hh.' + index + '.ii'"
+      :rules="configRule.serviceType"
+    >
+      <el-input v-model="item.ii" />
+    </el-form-item>
+  </div>
+</el-form>
+
+<script>
+export default {
+    data() {
+        return {
+            form: {
+                aa: null,
+                hh: [{
+                    ii: '',
+                }]
+            },
+            configRule: {
+                name: [{ required: true, message: '请输入名称', trigger: 'blur' }],
+            }
+        }
+    }
+}
+</script>
 ```
 
 

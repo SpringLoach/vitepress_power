@@ -4,6 +4,16 @@ https://blog.csdn.net/qq_22182989/article/details/125387145
 
 
 
+### 安装node.js官方包
+
+> 根据[教程](https://zhuanlan.zhihu.com/p/558784826)，可以从[官方](https://nodejs.org/download/release/)上找到任意版本的包进行安装，window 版本的命名如下：
+>
+> ```shell
+> node-v14.20.0-x64.msi  
+> ```
+
+
+
 ### 常用命令
 
 查看所有安装的 node.js 版本
