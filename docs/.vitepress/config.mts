@@ -9,7 +9,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Guide', link: '/guide/待整理' },
+      { text: 'Guide', link: '/guide/computed' },
       { text: 'Business', link: '/business/test' },
     ],
 
@@ -18,6 +18,7 @@ export default defineConfig({
         {
           text: 'Guide',
           items: [
+            { text: 'computed', link: '/guide/computed' },
             { text: 'Markdown Examples', link: '/guide/markdown-examples' },
             { text: 'vitepress', link: '/guide/vitepress' },
             { text: 'ES Next', link: '/guide/ES Next' },

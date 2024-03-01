@@ -1,3 +1,15 @@
+
+
+<textarea id="computed-textarea" class="operate-textarea" />
+
+
+
+<button id="computed-btn">测试</button>
+
+
+<div id="computed-result"></div>
+
+
 ### 循环遍历数组索引
 
 ```javascript
